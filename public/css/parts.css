@@ -1,0 +1,78 @@
+/* 各パーツ CSS */
+
+/************************* 吹き出し *****************************/
+
+.sp-balloon {
+    margin: auto;
+    display: inline-block;
+}
+.sp-balloon-msg {
+    height: 100%;
+}
+.sp-balloon-img {
+    border-radius: 50%;          /* 円形にする */
+    -moz-border-radius: 50%;     /* 円形にする */
+    -webkit-border-radius: 50%;  /* 円形にする */
+    width: 100px;
+    height: 100px;
+}
+.sp-balloon-img-left {
+    float: left;
+}
+.sp-balloon-text {
+    border-radius: 10px;         /* 角を丸く */
+    -moz-border-radius: 10px;    /* 角を丸く */
+    -webkit-border-radius: 10px; /* 角を丸く */
+    padding: 15px 30px;
+    margin-left: 60px;
+    display: inline-block;
+    position: relative;          /* ベース指定 */
+    margin-bottom: 20px;
+}
+.sp-balloon-text::before {
+    position: absolute;                     /* ベースの位置を基に作成 */
+    left: -30px;                            /* ベースの左からマイナス位置に飛び出す */
+    top: 20px;                              /* 上から位置をずらす */
+    border-top: 20px solid transparent;     /* 三角の中心から上に広がる */
+    border-bottom: 20px solid transparent;  /* 三角の中心から下に広がる */
+    content: '';
+    height: 0;                              /* 高さをゼロにする */
+    width: 0;                               /* 幅をゼロにする */
+}
+.sp-balloon-text-blue::before {
+    border-right: 30px solid #cceeff;       /* 左三角の色 */
+}
+.sp-balloon-text-green::before {
+    border-right: 30px solid #c9fcc7;       /* 左三角の色 */
+}
+.sp-balloon-text-orange::before {
+    border-right: 30px solid #fcebc7;       /* 左三角の色 */
+}
+
+
+/* media */
+@media (max-width:1090px){
+    .sp-balloon-text {
+        margin-left: 80px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 430px) {
+    .sp-balloon-usr-nm {
+        padding: 10px;
+    }
+    .sp-balloon-text {
+        margin: 0;
+        padding: 15px;
+    }
+    .sp-balloon-text::before {
+        display: none;
+    }
+    .sp-balloon-text img {
+        margin-right: 10px;
+    }
+    .sp-balloon-text h4 {
+        font-size: 16px;
+    }
+}
